@@ -1,5 +1,15 @@
 #!/usr/bin/env python3
 
+"""
+Script Name: pingfed_cert_report.py
+Description: This script generates a certificate expiration report for PingFederate.
+AUTHOR:  George H Knerr Jr
+Date Created: 2023-04-10
+Last Update: 2024-12-02
+Version: 2.4
+Python Version: 3.8 or later
+"""
+
 import logging
 import logging.handlers
 import requests
