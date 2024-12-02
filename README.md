@@ -5,7 +5,7 @@ This script was developed as a personal project in my home Ping Identity home la
 
 ## 🎯 Script Purpose
 
-The `pingfed_cert_report.py` script is a utility designed to generate detailed reports on the certificates used in a PingFederate environment. It interacts with the PingFederate Admin API to retrieve certificate data, analyze expiration details, and produce customizable reports. Key features include:
+The `pingfed-cert-report.py` script is a utility designed to generate detailed reports on the certificates used in a PingFederate environment. It interacts with the PingFederate Admin API to retrieve certificate data, analyze expiration details, and produce customizable reports. Key features include:
 
 - **Certificate Types Supported**:
   - SSO signing certificates
@@ -36,6 +36,7 @@ This project is licensed under the MIT License. You are free to use, modify, and
 
 | Version | Date       | Changes                                                                                   |
 |---------|------------|-------------------------------------------------------------------------------------------|
+| 2.4 .1  |Dec 2, 2024| Added missing CSV file header "Status" and made some syntax corrections in the README.md.  |
 | 2.4     |Aug 3, 2024| Added support for IDP connection certificates. Enhanced sorting by days to expire.        |
 | 2.3     |Jul 28, 2024| Improved argument handling by displaying help when no arguments are passed.               |
 | 2.2     |Jul 28, 2024| Introduced 'none' as an output type, and replaced JSON with a pretty JSON attachment.      |
@@ -85,14 +86,14 @@ If your system uses a non-standard or custom path and/or file for the CA certifi
 
 ## 🚀 Execution
 ```
-./ping-fed-cert-report.py idp https://pf1.example.com:9999/pf-admin-api/v1/ Administrator admin@example.com none
+./pingfed-cert-report.py idp https://pf1.example.com:9999/pf-admin-api/v1/ Administrator admin@example.com none
 
-./ping-fed-cert-report.py idp https://pf1.example.com:9999/pf-admin-api/v1/ Administrator admin@devops1.example.com both
+./pingfed-cert-report.py idp https://pf1.example.com:9999/pf-admin-api/v1/ Administrator admin@devops1.example.com both
 ```
 
 ## ❓ Help
 ```
-./ping-fed-cert-report.py 
+./pingfed-cert-report.py 
 usage: pingfed-cert-report.py [-h] {signing,sslserver,ca,sp,idp} pingfederate_url pingfederate_username admin_email {both,json,csv,none}
 
 PingFederate Certificate Expiration Report Generator
