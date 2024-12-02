@@ -36,7 +36,6 @@ This project is licensed under the MIT License. You are free to use, modify, and
 
 | Version | Date       | Changes                                                                                   |
 |---------|------------|-------------------------------------------------------------------------------------------|
-| 2.4 .1  |Dec 2, 2024| Added missing CSV file header "Status" and made some syntax corrections in the README.md.  |
 | 2.4     |Aug 3, 2024| Added support for IDP connection certificates. Enhanced sorting by days to expire.        |
 | 2.3     |Jul 28, 2024| Improved argument handling by displaying help when no arguments are passed.               |
 | 2.2     |Jul 28, 2024| Introduced 'none' as an output type, and replaced JSON with a pretty JSON attachment.      |

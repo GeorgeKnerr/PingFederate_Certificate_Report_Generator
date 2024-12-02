@@ -2,11 +2,11 @@
 
 """
 Script Name: pingfed_cert_report.py
-Description: This script generates a certificate expiration report for PingFederate.
+Description: This script generates a certificate expiration report for PingFederate certificates.
 AUTHOR:  George H Knerr Jr
 Date Created: 2023-04-10
 Last Update: 2024-12-02
-Version: 2.4.1
+Version: 2.4.2
 Python Version: 3.8 or later
 """
 
@@ -68,7 +68,7 @@ def parse_args():
         "cert_type",
         choices=["signing", "sslserver", "ca", "sp", "idp"],
         help="Certificate type to report on:\n"
-             "  signing   - SSO signing certificates\n"
+             "  signing   - SSO signing & descryption certificates\n"
              "  sslserver - SSL server certificates\n"
              "  ca        - CA certificates\n"
              "  sp        - SP connection certificates\n"
