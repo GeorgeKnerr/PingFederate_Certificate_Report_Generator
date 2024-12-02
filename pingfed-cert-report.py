@@ -26,7 +26,7 @@ import os
 import sys
 
 # The ca_cert_file variable must be set to the path of the CA certificate file on the local system
-ca_cert_file = '<path_to_ca_certificate_pem_file>'
+ca_cert_file = '/home/max/vm-shared/cryptography/knerr.us_ca/knerr.us.CA.pem'
 todays_data_time = datetime.datetime.now()
 data_sorted = []
 data_sorted_csv = "Days_to_Expire,Expires,SerialNumber,Common Name,Organizational Unit,Organization,Locality,State,Country,Status,Connection_Name\n"
@@ -66,9 +66,9 @@ def parse_args():
 
     parser.add_argument(
         "cert_type",
-        choices=["signing", "sslserver", "ca", "sp", "idp"],
+        choices=["signing-decryption", "sslserver", "ca", "sp", "idp"],
         help="Certificate type to report on:\n"
-             "  signing   - SSO signing & descryption certificates\n"
+             "  signing-decryption   - SSO signing & descryption certificates\n"
              "  sslserver - SSL server certificates\n"
              "  ca        - CA certificates\n"
              "  sp        - SP connection certificates\n"
@@ -115,7 +115,7 @@ def parse_args():
 def get_subject_endpoint(cert_type):
     # Make the parsed arguments globally available
     global subject, pingfederate_endpoint
-    if cert_type == "signing":
+    if cert_type == "signing-decryption":
         pingfederate_endpoint = "keyPairs/signing"
     elif cert_type == "sslserver":
         pingfederate_endpoint = "keyPairs/sslServer"
